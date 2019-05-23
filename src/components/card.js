@@ -1,12 +1,12 @@
 import React from 'react';
 
-let card = ( ) => {
+function Card() {
   
   return (
-    <div className="card-main">
-
+    <div className="card">
+      Words
     </div>
   )
 };
 
-export default card;
+export default Card;
