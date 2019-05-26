@@ -1,17 +1,35 @@
 import React from 'react';
-import './css/App.css';
 import './css/bootstrap.css';
+import './css/bootstrap.css.map';
 import './css/components.css';
+import './css/cards-ie.css';
+import './css/cards-ie9.css';
+import './css/cards.css';
+import './css/App.css';
 
-import Card from './components/Card';
+
+import Hand from './components/hand';
 
 function App() {
   return (
     <div className="container">
       <div className="row">
-        <Card />
-        <Card />
-        <Card />
+		  <div className="col">
+		  	<Hand />
+		  </div>
+		  <div className="col">
+		  	<Hand />
+		  </div>
+		  <div className="col">
+		  	<Hand />
+		  </div>
+		  <div className="col">
+		  	<Hand />
+		  </div>
+		  <div className="col">
+		  	<Hand />
+		  </div>
+		  
       </div>
     </div>
   );
