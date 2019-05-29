@@ -4,19 +4,24 @@ html {
 }
 
 body {
-  background-image: url('../images/wallpaper-3840.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  padding: 50px;
-  height: 100%;
-  margin: 0;
+	background-image: url('../images/wallpaper-3840.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	padding: 50px;
+	padding-top: 100px;
+	height: 100%;
+	margin: 0;
 };
 
 
 .App {
-  position: fixed;
-  top: 50px;
+	position: fixed;
+	top: 50px;
+}
+
+.h-33 {
+	height: 33% !important
 }
 
 /*Extra small devices (portrait phones, less than 576px)*/

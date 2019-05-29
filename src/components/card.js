@@ -78,8 +78,10 @@ console.log("this is cards", cards)
 	
 export default function Card () {
 	return (
-		<ul className="hand">
-			{cards}
-		</ul>
+		<div className="playingCards faceImages">
+			<ul className="hand">
+				{cards}
+			</ul>
+    	</div>
 	)
 }
