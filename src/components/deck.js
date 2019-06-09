@@ -1,6 +1,6 @@
 import React from 'react';
 
-let numOfCardsLeft = 27;
+let numOfCardsLeft = 27; //This value will come from backend.
 
 let deckArr = [];
 
