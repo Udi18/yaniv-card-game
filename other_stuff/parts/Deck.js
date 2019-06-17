@@ -48,17 +48,4 @@ class Deck {
   }
 }
 
-const deck = new Deck();
-
-// deck.newShuffle();
-deck.newShuffle();
-// deck.receiveCards([5]);
-// deck.receiveCards([7,8,9]);
-let hand = [];
-while(hand.length < 6){
-  hand.push(deck.dispenseCard());
-}
-
-deck.receiveCards([hand[0]]);
-
-export default Deck;
+module.exports = Deck;

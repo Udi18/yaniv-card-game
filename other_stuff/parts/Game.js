@@ -1,11 +1,12 @@
 "use strict";
-const Player = require('Player');
-const Deck = require('Deck');
+const Player = require('./Player.js');
+const Deck = require('./Deck.js');
 
 class Game {
-  	constructor(id, players){
+  	constructor(id, players, deck){
 		this.id = id;
-		this.players = players;
+    this.players = players;
+    this.deck = deck;
   	}
   
   	newGame(){
@@ -22,8 +23,4 @@ class Game {
 	}
 }
 
-let game = new Game(1, ['Udi', 'Mona', 'Earle', 'Lily', 'Margarita', 'Arianna']);
-
-game.newGame();
-
-console.log(game, "game");
+module.exports = Game;
