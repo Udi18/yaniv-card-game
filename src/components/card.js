@@ -26,11 +26,234 @@ let mockCardObj = {
 		suit: "diams",
 		symbol: "A",
 	},
-
 }
+
+let mockHandArr = [ 25, 1, 40, 37, 32 ]
+
+//Clubs, Diamonds, Hearts, Spades
+//A 2 3 4 5 6 7 8 9 10 J Q K 
+// Joker Joker
+let _cards = [
+	{
+		rank: "a",
+		suit: "clubs",
+		symbol: "A"
+	},{
+		rank: "2",
+		suit: "clubs",
+		symbol: "2"
+	},{
+		rank: "3",
+		suit: "clubs",
+		symbol: "3"
+	},{
+		rank: "4",
+		suit: "clubs",
+		symbol: "4"
+	},{
+		rank: "5",
+		suit: "clubs",
+		symbol: "5"
+	},{
+		rank: "6",
+		suit: "clubs",
+		symbol: "6"
+	},{
+		rank: "7",
+		suit: "clubs",
+		symbol: "7"
+	},{
+		rank: "8",
+		suit: "clubs",
+		symbol: "8"
+	},{
+		rank: "9",
+		suit: "clubs",
+		symbol: "9"
+	},{
+		rank: "10",
+		suit: "clubs",
+		symbol: "10"
+	},{
+		rank: "j",
+		suit: "clubs",
+		symbol: "J"
+	},{
+		rank: "q",
+		suit: "clubs",
+		symbol: "Q"
+	},{
+		rank: "k",
+		suit: "clubs",
+		symbol: "K"
+	},{
+		rank: "a",
+		suit: "diams",
+		symbol: "A"
+	},{
+		rank: "2",
+		suit: "diams",
+		symbol: "2"
+	},{
+		rank: "3",
+		suit: "diams",
+		symbol: "3"
+	},{
+		rank: "4",
+		suit: "diams",
+		symbol: "4"
+	},{
+		rank: "5",
+		suit: "diams",
+		symbol: "5"
+	},{
+		rank: "6",
+		suit: "diams",
+		symbol: "6"
+	},{
+		rank: "7",
+		suit: "diams",
+		symbol: "7"
+	},{
+		rank: "8",
+		suit: "diams",
+		symbol: "8"
+	},{
+		rank: "9",
+		suit: "diams",
+		symbol: "9"
+	},{
+		rank: "10",
+		suit: "diams",
+		symbol: "10"
+	},{
+		rank: "j",
+		suit: "diams",
+		symbol: "J"
+	},{
+		rank: "q",
+		suit: "diams",
+		symbol: "Q"
+	},{
+		rank: "k",
+		suit: "diams",
+		symbol: "K"
+	},{
+		rank: "a",
+		suit: "hearts",
+		symbol: "A"
+	},{
+		rank: "2",
+		suit: "hearts",
+		symbol: "2"
+	},{
+		rank: "3",
+		suit: "hearts",
+		symbol: "3"
+	},{
+		rank: "4",
+		suit: "hearts",
+		symbol: "4"
+	},{
+		rank: "5",
+		suit: "hearts",
+		symbol: "5"
+	},{
+		rank: "6",
+		suit: "hearts",
+		symbol: "6"
+	},{
+		rank: "7",
+		suit: "hearts",
+		symbol: "7"
+	},{
+		rank: "8",
+		suit: "hearts",
+		symbol: "8"
+	},{
+		rank: "9",
+		suit: "hearts",
+		symbol: "9"
+	},{
+		rank: "10",
+		suit: "hearts",
+		symbol: "10"
+	},{
+		rank: "j",
+		suit: "hearts",
+		symbol: "J"
+	},{
+		rank: "q",
+		suit: "hearts",
+		symbol: "Q"
+	},{
+		rank: "k",
+		suit: "hearts",
+		symbol: "K"
+	},{
+		rank: "a",
+		suit: "spades",
+		symbol: "A"
+	},{
+		rank: "2",
+		suit: "spades",
+		symbol: "2"
+	},{
+		rank: "3",
+		suit: "spades",
+		symbol: "3"
+	},{
+		rank: "4",
+		suit: "spades",
+		symbol: "4"
+	},{
+		rank: "5",
+		suit: "spades",
+		symbol: "5"
+	},{
+		rank: "6",
+		suit: "spades",
+		symbol: "6"
+	},{
+		rank: "7",
+		suit: "spades",
+		symbol: "7"
+	},{
+		rank: "8",
+		suit: "spades",
+		symbol: "8"
+	},{
+		rank: "9",
+		suit: "spades",
+		symbol: "9"
+	},{
+		rank: "10",
+		suit: "spades",
+		symbol: "10"
+	},{
+		rank: "j",
+		suit: "spades",
+		symbol: "J"
+	},{
+		rank: "q",
+		suit: "spades",
+		symbol: "Q"
+	},{
+		rank: "k",
+		suit: "spades",
+		symbol: "K"
+	}
+]
+
 let cardDescObj = [];
 
 console.log("this is mockCardObj", mockCardObj)
+
+// for(let j = 0; j < mockHandArr.length; j++){
+// 	let symbolID = String;
+
+// 	switch (_cards[mockHandArr[i]])
+// }
 for(let i = 0; i < Object.keys(mockCardObj).length; i++){
 	let symbolID = String;
 
