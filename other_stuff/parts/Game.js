@@ -1,6 +1,4 @@
 "use strict";
-const Player = require('./Player.js');
-const Deck = require('./Deck.js');
 
 class Game {
   	constructor(id, players, deck){
@@ -9,18 +7,16 @@ class Game {
     this.deck = deck;
   	}
   
-  	newGame(){
-	  //Create players
-		const deck = new Deck();
-    deck.newShuffle();
-		for(let i = 0; i < this.players.length; i++){
-			this.players[i] = new Player(this.players[i], deck);
-			console.log(this.players[i]);
-			for(let i = 0; i < 5; i++){
-				this.players[i].drawCard();
-			}	
-		}
-	}
+  newGame(){
+    //shuffle new deck into draw pile
+    this.deck.newShuffle();
+    
+    for(let i = 0; i < 5; i++){
+      for(let j = 0; j < this.players.length; j++){
+        this.players[j].drawCard();
+      }	
+    }
+  }
 }
 
 module.exports = Game;
