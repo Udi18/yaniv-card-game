@@ -14,3 +14,7 @@ players[1].playCards([players[1].hand[0]]);
 players[2].selectCard(deck.lastPlayed[0]);
 players[2].playCards([players[2].hand[3]]);
 console.log(game);
+for(let i = 0; i < players.length; i++){
+  console.log(`${players[i].name} has ${players[i].hand} cards.`);
+}
+console.log(`Deck has: ${deck.drawPile.length}`);
