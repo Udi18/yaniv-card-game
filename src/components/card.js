@@ -28,7 +28,7 @@ let mockCardObj = {
 	},
 }
 
-let mockHandArr = [ 25, 1, 40, 37, 32 ]
+let mockHandArr = [ 42, 23, 1, 28, 19 ]
 
 //Clubs, Diamonds, Hearts, Spades
 //A 2 3 4 5 6 7 8 9 10 J Q K 
@@ -249,15 +249,10 @@ let cardDescObj = [];
 
 console.log("this is mockCardObj", mockCardObj)
 
-// for(let j = 0; j < mockHandArr.length; j++){
-// 	let symbolID = String;
-
-// 	switch (_cards[mockHandArr[i]])
-// }
-for(let i = 0; i < Object.keys(mockCardObj).length; i++){
+for(let i = 0; i < mockHandArr.length; i++){
 	let symbolID = String;
 
-	switch (mockCardObj[i].suit){
+	switch (_cards[mockHandArr[i]]){
 		case "diams":
 			symbolID = "\u2666"
 			break;
@@ -272,15 +267,41 @@ for(let i = 0; i < Object.keys(mockCardObj).length; i++){
 			break;
 		default:
 			break;
-	};
-		
+	}
 
 	cardDescObj.push({
-		labelCN : `card rank-${mockCardObj[i].rank} ${mockCardObj[i].suit}`,
-		spanCNrank : `${mockCardObj[i].symbol}`,
+		labelCN : `card rank-${_cards[mockHandArr[i]].rank} ${_cards[mockHandArr[i]].suit}`,
+		spanCNrank : `${_cards[mockHandArr[i]].symbol}`,
 		spanCNsuit : symbolID
 	})
 }
+// for(let i = 0; i < Object.keys(mockCardObj).length; i++){
+// 	let symbolID = String;
+
+// 	switch (mockCardObj[i].suit){
+// 		case "diams":
+// 			symbolID = "\u2666"
+// 			break;
+// 		case "hearts":
+// 			symbolID = "\u2665"
+// 			break;
+// 		case "clubs":
+// 			symbolID = "\u2663"
+// 			break;
+// 		case "spades":
+// 			symbolID = "\u2660"
+// 			break;
+// 		default:
+// 			break;
+// 	};
+		
+
+// 	cardDescObj.push({
+// 		labelCN : `card rank-${mockCardObj[i].rank} ${mockCardObj[i].suit}`,
+// 		spanCNrank : `${mockCardObj[i].symbol}`,
+// 		spanCNsuit : symbolID
+// 	})
+// }
 
 console.log("this is cardDescObj",cardDescObj)
 
