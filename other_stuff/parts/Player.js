@@ -31,7 +31,7 @@ module.exports = class Player {
   }
 
   sumHandValue(){
-
+    let sum = undefined;
   }
 
   drawCard(){
