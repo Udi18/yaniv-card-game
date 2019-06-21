@@ -7,11 +7,31 @@ module.exports = class Player {
     this.name = name;
     this.hand = [];
     this.deck = deck;
-    this.dealerStatus = false; 
+    this.dealerStatus = false;
+    this.handValue = 0;
   }
 
   displayHand(){
     return this.hand;
+  }
+
+  createCardValues(){
+    const newDeck = deck.newDeck();
+    const cardValues = {};
+    newDeck.forEach(card => {
+      if(card < 53){
+        let value = (card % 13 > 10) ? 10 : card % 13;
+        cardValues.card = value;
+      } else {
+        let value = 15;
+        cardValues.card = value;
+      }
+    });
+    return cardValues;
+  }
+
+  sumHandValue(){
+
   }
 
   drawCard(){
