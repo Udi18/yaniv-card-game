@@ -9,6 +9,7 @@ module.exports = class Player {
     this.deck = deck;
     this.dealerStatus = false;
     this.handValue = 0;
+    this.cardValues = {};
   }
 
   displayHand(){
@@ -16,7 +17,7 @@ module.exports = class Player {
   }
 
   createCardValues(){
-    const newDeck = deck.newDeck();
+    const newDeck = this.deck.newDeck();
     const cardValues = {};
     newDeck.forEach(card => {
       if(card < 53){
@@ -27,11 +28,15 @@ module.exports = class Player {
         cardValues.card = value;
       }
     });
+    this.cardValues = cardValues;
     return cardValues;
   }
 
   sumHandValue(){
-    let sum = undefined;
+    this.createCardValues();
+    console.log(this.cardValues);
+    let sum = this.hand.reduce((acc, card) => acc += this.cardValues[card]);
+    return sum;
   }
 
   drawCard(){

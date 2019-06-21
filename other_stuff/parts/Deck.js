@@ -20,7 +20,7 @@ class Deck {
   
   //Shuffles new deck into draw pile.
   newShuffle(){
-    this.drawPile = shuffle(newDeck());
+    this.drawPile = shuffle(this.newDeck());
   }
 
   //Shuffles discard pile in to draw pile.

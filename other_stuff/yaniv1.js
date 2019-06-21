@@ -21,4 +21,4 @@ console.log(`Deck has: ${deck.drawPile.length}`);
 console.log(`Discard has: ${deck.discardPile.length}`);
 
 console.log(players[2].hand);
-console.log(players[2].createCardValues());
+console.log(players[2].sumHandValue());
