@@ -1,15 +1,14 @@
 import React from 'react';
 
-let numOfCardsLeft = 27; //This value will come from backend.
+export default function Deck ( props ) {
+	let deckArr = [];
+	let numOfCardsLeft = props.numOfCardsLeft;
 
-let deckArr = [];
-
-export default function Deck () {
 	for(let i = 0; i < numOfCardsLeft; i++){
 		deckArr.push(
-			<li className="card back"></li>
-		)
-	}
+			<li className="card back" key={i}></li>
+		);
+	};
 
 	return (
 		<div className="playingCards">
@@ -17,5 +16,5 @@ export default function Deck () {
 				{deckArr}
 			</ul>
 		</div>
-	)
-}
+	);
+};
