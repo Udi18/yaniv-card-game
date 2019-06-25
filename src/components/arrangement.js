@@ -13,7 +13,7 @@ export default function Arrangement ( props ) {
 	switch ( playerCount ){
 		case 2: 
 			arrangement.push(
-				<div className="container h-100">
+				<div className="container mw-100 h-100">
 					<div className="row h-33 align-items-start">
 						<div className="col"></div>
 						<div className="col"></div>
@@ -58,7 +58,7 @@ export default function Arrangement ( props ) {
 
 		case 3: 
 			arrangement.push(
-				<div className="container h-100">
+				<div className="container mw-100 h-100">
 					<div className="row h-33 align-items-start">
 						<div className="col"></div>
 						<div className="col">
@@ -109,7 +109,7 @@ export default function Arrangement ( props ) {
 
 		case 4: 
 			arrangement.push( 
-				<div className="container h-100">
+				<div className="container mw-100 h-100">
 					<div className="row h-33 align-items-start">
 						<div className="col"></div>
 						<div className="col"></div>
@@ -166,7 +166,7 @@ export default function Arrangement ( props ) {
 
 		case 5: 
 			arrangement.push( 
-				<div className="container h-100">
+				<div className="container mw-100 h-100">
 					<div className="row h-33 align-items-start">
 						<div className="col"></div>
 						<div className="col">

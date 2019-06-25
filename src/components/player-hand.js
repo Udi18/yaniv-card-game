@@ -269,8 +269,6 @@ export default function PlayerHand ( props ) {
 		};
 	};
 
-	console.log("this is cardDescObj",cardDescArr);
-
 	function Card () {
 		let cards = [];
 		
@@ -280,7 +278,7 @@ export default function PlayerHand ( props ) {
 			let spanCNsuit = cardDescArr[i].spanCNsuit;
 
 			cards.push(
-				<li key={i}>
+				<li key={"player-hand" + i}>
 					<label className={labelCN}>
 						<span className="rank">{spanCNrank}</span>
 						<span className="suit">{spanCNsuit}</span>
@@ -290,7 +288,6 @@ export default function PlayerHand ( props ) {
 		};
 		return cards;
 	};
-
 
 	return (
 		<div className="playingCards faceImages">

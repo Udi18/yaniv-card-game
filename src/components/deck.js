@@ -6,7 +6,7 @@ export default function Deck ( props ) {
 
 	for(let i = 0; i < numOfCardsLeft; i++){
 		deckArr.push(
-			<li className="card back" key={i}></li>
+			<li className="card back" key={"deck" + i}></li>
 		);
 	};
 
