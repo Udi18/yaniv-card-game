@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Hand from './hand';
+import Hand from './opponent-hands';
 import PlayerHand from './player-hand';
 import Deck from './deck';
 
@@ -9,11 +9,12 @@ export default function Arrangement ( props ) {
 	let opponentCardCount = props.opponentCardCount;
 	let playerCount = props.playerCount;
 	let numOfCardsLeft = props.numOfCardsLeft;
+	let playerHand = props.playerHand;
 
 	switch ( playerCount ){
 		case 2: 
 			arrangement.push(
-				<div className="container mw-100 h-100">
+				<div className="container mw-100 h-100" key="pc2">
 					<div className="row h-33 align-items-start">
 						<div className="col"></div>
 						<div className="col"></div>
@@ -46,7 +47,7 @@ export default function Arrangement ( props ) {
 						<div className="col"></div>
 						<div className="col">
 							<PlayerHand 
-								playerHand={props.playerHand}
+								playerHand={playerHand}
 							/>
 						</div>
 						<div className="col"></div>
@@ -58,7 +59,7 @@ export default function Arrangement ( props ) {
 
 		case 3: 
 			arrangement.push(
-				<div className="container mw-100 h-100">
+				<div className="container mw-100 h-100" key="pc3">
 					<div className="row h-33 align-items-start">
 						<div className="col"></div>
 						<div className="col">
@@ -97,7 +98,7 @@ export default function Arrangement ( props ) {
 						<div className="col"></div>
 						<div className="col">
 							<PlayerHand 
-								playerHand={props.playerHand}
+								playerHand={playerHand}
 							/>
 						</div>
 						<div className="col"></div>
@@ -109,7 +110,7 @@ export default function Arrangement ( props ) {
 
 		case 4: 
 			arrangement.push( 
-				<div className="container mw-100 h-100">
+				<div className="container mw-100 h-100" key="pc4">
 					<div className="row h-33 align-items-start">
 						<div className="col"></div>
 						<div className="col"></div>
@@ -125,7 +126,7 @@ export default function Arrangement ( props ) {
 					</div>
 		
 					<div className="row h-33 align-items-center">
-						<div className="col">
+						<div className="col left-side">
 							<Hand 
 								opponentCardCount={opponentCardCount}
 								playerCount={playerCount}
@@ -140,7 +141,7 @@ export default function Arrangement ( props ) {
 						</div>
 						<div className="col"></div>
 						<div className="col"></div>
-						<div className="col">
+						<div className="col right-side">
 							<Hand 
 								opponentCardCount={opponentCardCount}
 								playerCount={playerCount}
@@ -154,7 +155,7 @@ export default function Arrangement ( props ) {
 						<div className="col"></div>
 						<div className="col">
 							<PlayerHand 
-								playerHand={props.playerHand}
+								playerHand={playerHand}
 							/>
 						</div>
 						<div className="col"></div>
@@ -166,7 +167,7 @@ export default function Arrangement ( props ) {
 
 		case 5: 
 			arrangement.push( 
-				<div className="container mw-100 h-100">
+				<div className="container mw-100 h-100" key="pc5">
 					<div className="row h-33 align-items-start">
 						<div className="col"></div>
 						<div className="col">
@@ -188,7 +189,7 @@ export default function Arrangement ( props ) {
 					</div>
 		
 					<div className="row h-33 align-items-center">
-						<div className="col">
+						<div className="col left-side">
 							<Hand 
 								opponentCardCount={opponentCardCount}
 								playerCount={playerCount}
@@ -203,7 +204,7 @@ export default function Arrangement ( props ) {
 						</div>
 						<div className="col"></div>
 						<div className="col"></div>
-						<div className="col">
+						<div className="col right-side">
 							<Hand 
 								opponentCardCount={opponentCardCount}
 								playerCount={playerCount}
@@ -217,7 +218,7 @@ export default function Arrangement ( props ) {
 						<div className="col"></div>
 						<div className="col">
 							<PlayerHand 
-								playerHand={props.playerHand}
+								playerHand={playerHand}
 							/>
 						</div>
 						<div className="col"></div>
@@ -231,5 +232,7 @@ export default function Arrangement ( props ) {
 			break;
 	};
 
-	return arrangement;
+	return (
+		arrangement
+	)
 };

@@ -257,14 +257,16 @@ export default function PlayerHand ( props ) {
 		if(_suit !== "joker"){
 			cardDescArr.push({
 				labelCN : `card rank-${_symbol} ${_suit}`,
-				spanCNrank : `${_rank}`,
-				spanCNsuit : symbolID
+				spanCNrank : _rank,
+				spanCNsuit : symbolID,
+				cardNum : playerHand[i]
 			})
 		} else {
 			cardDescArr.push({
 				labelCN : `card ${_suit}`,
-				spanCNrank : `${_rank}`,
-				spanCNsuit : symbolID
+				spanCNrank : _rank,
+				spanCNsuit : symbolID,
+				cardNum : playerHand[i]
 			})
 		};
 	};
@@ -276,10 +278,11 @@ export default function PlayerHand ( props ) {
 			let labelCN = cardDescArr[i].labelCN;
 			let spanCNrank = cardDescArr[i].spanCNrank;
 			let spanCNsuit = cardDescArr[i].spanCNsuit;
+			let cardNum = cardDescArr[i].cardNum;
 
 			cards.push(
-				<li key={"player-hand" + i}>
-					<label className={labelCN}>
+				<li key={"player-card" + i}>
+					<label className={labelCN} id={cardNum}>
 						<span className="rank">{spanCNrank}</span>
 						<span className="suit">{spanCNsuit}</span>
 					</label>
