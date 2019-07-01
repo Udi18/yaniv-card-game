@@ -1,4 +1,3 @@
-"use strict";
 const shuffle = require('shuffle-array');
 
 
@@ -10,7 +9,6 @@ class Deck {
   }
 
   //Shuffles all cards in to draw pile.
-
   newShuffle(){
     const unShuffledDeck = [];
     for(let i = 0; i < 54; i++){
@@ -46,6 +44,7 @@ class Deck {
   getLastPlayed(){
     return this.lastPlayed;
   }
+
 }
 
 module.exports = Deck;
