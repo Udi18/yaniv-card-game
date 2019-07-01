@@ -1,23 +1,53 @@
+const express = require('express');
+const socketio = require('socket.io');
+const http = require('http');
+const app = express();
+const server = http.Server(app);
+const io = socketio(server);
+
 const Deck = require('./parts/Deck.js');
-const Player = require('./parts/Player.js');
 const Game = require('./parts/Game.js');
 
-const playerArr = ['Udi', 'Mona', 'Earle', 'Lily', 'Margarita', 'Arianna'];
-const deck = new Deck();
-const players = playerArr.map(player => player = new Player(`${player}`, deck));
-const game = new Game(123, players, deck);
-game.newGame();
-players[0].drawCard();
-players[0].playCards([players[0].hand[0]]);
-players[1].drawCard();
-players[1].playCards([players[1].hand[0]]);
-players[2].selectCard(deck.lastPlayed[0]);
-players[2].playCards([players[2].hand[3]]);
-console.log(game);
-for(let i = 0; i < players.length; i++){
-  console.log(`${players[i].name} has ${players[i].hand} cards.`);
-}
-console.log(`Deck has: ${deck.drawPile.length}`);
-console.log(`Discard has: ${deck.discardPile.length}`);
 
-console.log(players[2].hand)
+const players = ['Udi', 'Mona', 'Earle', 'Lily', 'Margarita', 'Arianna'];
+const gameID = 123;
+
+const playYaniv = (playersArr, gameIDCode) => {
+  const deck = new Deck();
+  const game = new Game(gameIDCode, playersArr, deck);
+  game.newGame(game);
+  const connections = [null, null];
+  
+  io.on('connection', function(socket){
+    let playerIndex = -1;
+    for(let i in connections) {
+      if (connections[i] === null) {
+        playerIndex = i;
+      }
+    }
+    socket.emit('player-number', playerIndex);
+  
+    if(playerIndex == -1) return;
+  
+    connections[playerIndex] = socket;
+  
+    socket.broadcast.emit('player-connect', playerIndex);
+  
+    socket.on('action', (data) => {
+      const request = eval `${data}`;
+  
+      socket.broadcast.emit('request', request);
+  });
+  socket.on('disconnect', function() {
+    console.log(`Player ${playerIndex} Disconnected`);
+    connections[playerIndex] = null;
+  });
+  });
+}
+
+app.use(express.static('other_stuff'));
+server.listen(8000, () =>('server started'));
+
+
+
+
