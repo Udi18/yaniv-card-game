@@ -10,6 +10,7 @@ export default function Arrangement ( props ) {
 	let playerCount = props.playerCount;
 	let numOfCardsLeft = props.numOfCardsLeft;
 	let playerHand = props.playerHand;
+	let playCards = props.playCards;
 
 	switch ( playerCount ){
 		case 2: 
@@ -49,6 +50,19 @@ export default function Arrangement ( props ) {
 							<PlayerHand 
 								playerHand={playerHand}
 							/>
+							<div className="player-buttons">
+								<ul>
+									<li>
+										<button type="button" className="btn btn-primary">Play Card(s)</button>
+									</li>
+									<li>
+										<button type="button" className="btn btn-secondary">Yaniv!</button>
+									</li>
+									<li>
+										<button type="button" className="btn btn-success">Menu</button>
+									</li>
+								</ul>
+							</div>
 						</div>
 						<div className="col"></div>
 						<div className="col"></div>
@@ -100,6 +114,19 @@ export default function Arrangement ( props ) {
 							<PlayerHand 
 								playerHand={playerHand}
 							/>
+							<div className="player-buttons">
+								<ul>
+									<li>
+										<button type="button" className="btn btn-primary">Play Card(s)</button>
+									</li>
+									<li>
+										<button type="button" className="btn btn-secondary">Yaniv!</button>
+									</li>
+									<li>
+										<button type="button" className="btn btn-success">Menu</button>
+									</li>
+								</ul>
+							</div>
 						</div>
 						<div className="col"></div>
 						<div className="col"></div>
@@ -157,6 +184,19 @@ export default function Arrangement ( props ) {
 							<PlayerHand 
 								playerHand={playerHand}
 							/>
+							<div className="player-buttons">
+								<ul>
+									<li>
+										<button type="button" className="btn btn-primary">Play Card(s)</button>
+									</li>
+									<li>
+										<button type="button" className="btn btn-secondary">Yaniv!</button>
+									</li>
+									<li>
+										<button type="button" className="btn btn-success">Menu</button>
+									</li>
+								</ul>
+							</div>
 						</div>
 						<div className="col"></div>
 						<div className="col"></div>
@@ -220,6 +260,19 @@ export default function Arrangement ( props ) {
 							<PlayerHand 
 								playerHand={playerHand}
 							/>
+							<div className="player-buttons">
+								<ul>
+									<li>
+										<button type="button" onClick={playCards} className="btn btn-primary">Play Card(s)</button>
+									</li>
+									<li>
+										<button type="button" className="btn btn-secondary">Yaniv!</button>
+									</li>
+									<li>
+										<button type="button" className="btn btn-success">Menu</button>
+									</li>
+								</ul>
+							</div>
 						</div>
 						<div className="col"></div>
 						<div className="col"></div>

@@ -23,6 +23,21 @@ body {
 	height: 33% !important
 }
 
+.player-buttons {
+	position: fixed;
+	float: right;
+	right: 10px;
+	bottom: 10px;
+}
+
+.player-buttons ul {
+	list-style: none;
+}
+
+.player-buttons button {
+	width: 100%;
+}
+
 /*Extra small devices (portrait phones, less than 576px)*/
 @media (max-width: 575.98px) { 
 

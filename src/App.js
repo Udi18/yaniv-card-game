@@ -9,7 +9,7 @@ import './css/cards-ie9.css';
 import './css/cards.css';
 import './css/App.css';
 
-import playerActions from './api';
+import { playerActions } from './api';
 import Arrangement from './components/arrangement';
 
 /* TODO overall list
@@ -26,6 +26,7 @@ import Arrangement from './components/arrangement';
 
 export default function App() {
 	let [yanivObj, setYanivObj] = useState({
+		playerName: "Earle",
 		playerCount: 5,
 		playerHand: [12, 17, 1, 28, 19],
 		opponentCardCount: [5, 2, 5, 2],
@@ -33,12 +34,19 @@ export default function App() {
 		discardPile: [],
 		playerTurn: undefined,
 		playerNum: undefined,
+		selectedCardState: []
 	});
 	
-	let drawCard = () => {
-		playerActions('action', () =>{
-			console.log('yup');
-		})
+	let drawCard = ( p ) => {
+		console.log(p + " is drawing a card.");
+		playerActions('action', ( p ) => {
+		});
+	};
+
+	let playCards = ( p, c ) => {
+		console.log(p + " is playing card(s) " + c);
+		playerActions('action', ( p, c ) => {
+		});
 	};
 
 	useEffect(() => {
@@ -47,9 +55,8 @@ export default function App() {
 		let topDeckCard = deckElement[0].lastChild;
 		let selectedCards = [];
 
-		console.log(topDeckCard);
 		topDeckCard.addEventListener('click', () => {
-			drawCard();
+			drawCard(yanivObj.playerName);
 		})
 		topDeckCard.classList.add('draw-card')
 
@@ -77,7 +84,12 @@ export default function App() {
 					card.classList.remove('selecting');
 					selectedCards.splice(index, 1);
 				};
-				console.log(selectedCards);
+				console.log(yanivObj);
+				setYanivObj(prevYanivObj => {
+					let state = { ...prevYanivObj }
+					state.selectedCardState = selectedCards
+					return state;
+				});
 			});
 
 			if (!selecting) {
@@ -86,7 +98,8 @@ export default function App() {
 				});
 			};
 		});
-	});
+	}, []);
+	
 
 	return <Arrangement
 	playerCount = {
@@ -100,6 +113,12 @@ export default function App() {
 	}
 	numOfCardsLeft = {
 		yanivObj.numOfCardsLeft
+	}
+	playCards = {
+		playCards
+	}
+	selectedCards = {
+		yanivObj.selectedCards
 	}
 	/>
 };
