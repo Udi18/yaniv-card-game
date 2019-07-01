@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Hand ( props ) {
+export default function OpponentHand ( props ) {
 	let handArr = [];
 	let opponentCardCount = props.opponentCardCount;
 	let positionFromPlayer = props.positionFromPlayer;

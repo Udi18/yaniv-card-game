@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Hand from './opponent-hands';
+import OpponentHand from './opponent-hands';
 import PlayerHand from './player-hand';
 import Deck from './deck';
 
@@ -19,7 +19,7 @@ export default function Arrangement ( props ) {
 						<div className="col"></div>
 						<div className="col"></div>
 						<div className="col">
-							<Hand 
+							<OpponentHand 
 								opponentCardCount={opponentCardCount}
 								playerCount={playerCount}
 								positionFromPlayer={1}
@@ -63,7 +63,7 @@ export default function Arrangement ( props ) {
 					<div className="row h-33 align-items-start">
 						<div className="col"></div>
 						<div className="col">
-							<Hand 
+							<OpponentHand 
 								opponentCardCount={opponentCardCount}
 								playerCount={playerCount}
 								positionFromPlayer={1}
@@ -71,7 +71,7 @@ export default function Arrangement ( props ) {
 						</div>
 						<div className="col"></div>
 						<div className="col">
-							<Hand 
+							<OpponentHand 
 								opponentCardCount={opponentCardCount}
 								playerCount={playerCount}
 								positionFromPlayer={2}
@@ -115,7 +115,7 @@ export default function Arrangement ( props ) {
 						<div className="col"></div>
 						<div className="col"></div>
 						<div className="col">
-							<Hand 
+							<OpponentHand 
 								opponentCardCount={opponentCardCount}
 								playerCount={playerCount}
 								positionFromPlayer={2}
@@ -127,7 +127,7 @@ export default function Arrangement ( props ) {
 		
 					<div className="row h-33 align-items-center">
 						<div className="col left-side">
-							<Hand 
+							<OpponentHand 
 								opponentCardCount={opponentCardCount}
 								playerCount={playerCount}
 								positionFromPlayer={1}
@@ -142,7 +142,7 @@ export default function Arrangement ( props ) {
 						<div className="col"></div>
 						<div className="col"></div>
 						<div className="col right-side">
-							<Hand 
+							<OpponentHand 
 								opponentCardCount={opponentCardCount}
 								playerCount={playerCount}
 								positionFromPlayer={3}
@@ -171,7 +171,7 @@ export default function Arrangement ( props ) {
 					<div className="row h-33 align-items-start">
 						<div className="col"></div>
 						<div className="col">
-							<Hand 
+							<OpponentHand 
 								opponentCardCount={opponentCardCount}
 								playerCount={playerCount}
 								positionFromPlayer={2}
@@ -179,7 +179,7 @@ export default function Arrangement ( props ) {
 						</div>
 						<div className="col"></div>
 						<div className="col">
-							<Hand 
+							<OpponentHand 
 								opponentCardCount={opponentCardCount}
 								playerCount={playerCount}
 								positionFromPlayer={3}
@@ -190,7 +190,7 @@ export default function Arrangement ( props ) {
 		
 					<div className="row h-33 align-items-center">
 						<div className="col left-side">
-							<Hand 
+							<OpponentHand 
 								opponentCardCount={opponentCardCount}
 								playerCount={playerCount}
 								positionFromPlayer={1}
@@ -205,7 +205,7 @@ export default function Arrangement ( props ) {
 						<div className="col"></div>
 						<div className="col"></div>
 						<div className="col right-side">
-							<Hand 
+							<OpponentHand 
 								opponentCardCount={opponentCardCount}
 								playerCount={playerCount}
 								positionFromPlayer={4}

@@ -1,10 +1,8 @@
-import openSocket from 'socket.io-client';
+import io from 'socket.io-client';
+const socket = io('http://localhost:8000');
 
-let url = 'http://localhost:8000/';
-const io = openSocket(url);
 
-function playerActions ( props ) {
-	io.on('')
-}
-
-export { playerActions };
+export default function playerActions (action, func) {
+	socket.emit(action, func)
+	console.log(action);
+};

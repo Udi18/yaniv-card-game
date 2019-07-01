@@ -661,3 +661,7 @@
 .right-side {
 	transform: rotate(-90deg) translate(-90px);
 }
+
+.draw-card {
+    cursor: pointer;
+}

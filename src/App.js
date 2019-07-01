@@ -9,6 +9,7 @@ import './css/cards-ie9.css';
 import './css/cards.css';
 import './css/App.css';
 
+import playerActions from './api';
 import Arrangement from './components/arrangement';
 
 /* TODO overall list
@@ -21,20 +22,36 @@ import Arrangement from './components/arrangement';
  **  create functions to tell backend what user is doing
  */
 
+
+
 export default function App() {
 	let [yanivObj, setYanivObj] = useState({
 		playerCount: 5,
-		playerHand: [42, 17, 1, 28, 19],
+		playerHand: [12, 17, 1, 28, 19],
 		opponentCardCount: [5, 2, 5, 2],
 		numOfCardsLeft: 12,
 		discardPile: [],
 		playerTurn: undefined,
 		playerNum: undefined,
 	});
+	
+	let drawCard = () => {
+		playerActions('action', () =>{
+			console.log('yup');
+		})
+	};
 
 	useEffect(() => {
 		let playerHandElement = document.querySelectorAll("label");
+		let deckElement = document.getElementsByClassName("deck");
+		let topDeckCard = deckElement[0].lastChild;
 		let selectedCards = [];
+
+		console.log(topDeckCard);
+		topDeckCard.addEventListener('click', () => {
+			drawCard();
+		})
+		topDeckCard.classList.add('draw-card')
 
 		playerHandElement.forEach((card) => {
 			let cardNum = card.id;
