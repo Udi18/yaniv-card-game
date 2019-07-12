@@ -8,13 +8,18 @@ class Deck {
     this.lastPlayed = [];
   }
 
-  //Shuffles all cards in to draw pile.
-  newShuffle(){
+  //Creates a new deck.
+  newDeck(){
     const unShuffledDeck = [];
     for(let i = 0; i < 54; i++){
       unShuffledDeck.push(i);
     }
-    this.drawPile = shuffle(unShuffledDeck);
+    return unShuffledDeck;
+  }
+  
+  //Shuffles new deck into draw pile.
+  newShuffle(){
+    this.drawPile = shuffle(this.newDeck());
   }
 
   //Shuffles discard pile in to draw pile.

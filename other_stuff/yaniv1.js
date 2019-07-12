@@ -45,9 +45,6 @@ const playYaniv = (playersArr, gameIDCode) => {
   });
 }
 
-app.use(express.static('other_stuff'));
-server.listen(8000, () =>('server started'));
 
-
-
-
+console.log(players[2].hand);
+console.log(players[2].sumHandValue());
