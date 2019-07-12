@@ -36,10 +36,12 @@
     text-decoration: none;
 }
 /* selected and hover state */
-.playingCards a.card:hover, .playingCards a.card:active, .playingCards a.card:focus,
-.playingCards label.card:hover,
+.playingCards a.card:hover, 
+.playingCards a.card:active, 
+.playingCards a.card:focus,
+/* .playingCards label.card:hover, */
 .playingCards strong .card {
-    bottom: 1em;
+	bottom: 1em;
 }
 .playingCards label.card {
     cursor: pointer;
@@ -168,7 +170,8 @@
     white-space: pre;
     line-height: .9;
     font-size: 1.3em;
-    word-spacing: -.05em;
+	word-spacing: -.15em;
+	margin-left: 0.35em;
 }
 
 /* make the hearts and clubs symbols fit, because they are a bit bigger than the others */
@@ -643,3 +646,22 @@
 .playingCards ul.deck li:nth-child(41) { left: 80px; bottom: 40px; }
 .playingCards ul.deck li:nth-child(42) { left: 82px; bottom: 41px; }
 
+.hovering {
+	margin-bottom: 1.75em !important;
+}
+
+.selecting {
+	margin-bottom: 1.75em !important;
+}
+
+.left-side {
+	transform: rotate(90deg) translate(-90px);
+}
+
+.right-side {
+	transform: rotate(-90deg) translate(-90px);
+}
+
+.draw-card {
+    cursor: pointer;
+}

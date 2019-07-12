@@ -8,12 +8,11 @@ body {
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
-	padding: 50px;
-	padding-top: 100px;
 	height: 100%;
 	margin: 0;
+	overflow: hidden;
+	padding-top: 50px;
 };
-
 
 .App {
 	position: fixed;
@@ -22,6 +21,21 @@ body {
 
 .h-33 {
 	height: 33% !important
+}
+
+.player-buttons {
+	position: fixed;
+	float: right;
+	right: 10px;
+	bottom: 10px;
+}
+
+.player-buttons ul {
+	list-style: none;
+}
+
+.player-buttons button {
+	width: 100%;
 }
 
 /*Extra small devices (portrait phones, less than 576px)*/

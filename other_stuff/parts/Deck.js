@@ -1,4 +1,3 @@
-"use strict";
 const shuffle = require('shuffle-array');
 
 
@@ -50,6 +49,7 @@ class Deck {
   getLastPlayed(){
     return this.lastPlayed;
   }
+
 }
 
 module.exports = Deck;
