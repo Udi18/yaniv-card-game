@@ -2,7 +2,7 @@ const Player = require('./Player.js');
 
 class Game {
   constructor(id, players, deck){
-		this.id = id;
+	this.id = id;
     this.players = players;
     this.deck = deck;
     this.playerTurn = undefined;
@@ -37,7 +37,8 @@ class Game {
     //       }
     //     }
     //   }
-    // }
+	// }
+	console.log(this.players);
   }
 
   getDealer(){

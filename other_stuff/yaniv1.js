@@ -23,28 +23,27 @@ const playYaniv = (playersArr, gameIDCode) => {
     for(let i in connections) {
       if (connections[i] === null) {
         playerIndex = i;
-      }
-    }
+      };
+	};
+	
     socket.emit('player-number', playerIndex);
   
-    if(playerIndex == -1) return;
+    if(playerIndex === -1) return;
   
     connections[playerIndex] = socket;
   
     socket.broadcast.emit('player-connect', playerIndex);
   
     socket.on('action', (data) => {
-      const request = eval `${data}`;
+      const request = eval(`${data}`);
   
       socket.broadcast.emit('request', request);
+  	});
+	socket.on('disconnect', function() {
+		console.log(`Player ${playerIndex} Disconnected`);
+		connections[playerIndex] = null;
+	});
   });
-  socket.on('disconnect', function() {
-    console.log(`Player ${playerIndex} Disconnected`);
-    connections[playerIndex] = null;
-  });
-  });
-}
+};
 
-
-console.log(players[2].hand);
-console.log(players[2].sumHandValue());
+playYaniv(players, gameID);

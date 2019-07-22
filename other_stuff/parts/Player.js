@@ -95,3 +95,5 @@ class Player {
     console.log(this.game);
   }
 }
+
+module.exports = Player;

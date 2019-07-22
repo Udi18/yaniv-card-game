@@ -2,6 +2,7 @@ import React from 'react';
 
 import OpponentHand from './opponent-hands';
 import PlayerHand from './player-hand';
+import Discard from './discard';
 import Deck from './deck';
 
 export default function Arrangement ( props ) {
@@ -10,12 +11,12 @@ export default function Arrangement ( props ) {
 	let playerCount = props.playerCount;
 	let numOfCardsLeft = props.numOfCardsLeft;
 	let playerHand = props.playerHand;
-	let playCards = props.playCards;
+	let discardPile = props.discardPile;
 
 	switch ( playerCount ){
 		case 2: 
 			arrangement.push(
-				<div className="container mw-100 h-100" key="pc2">
+				<div className="container mw-100 h-100" id="game-board" key="pc2">
 					<div className="row h-33 align-items-start">
 						<div className="col"></div>
 						<div className="col"></div>
@@ -38,7 +39,11 @@ export default function Arrangement ( props ) {
 								numOfCardsLeft={numOfCardsLeft} 
 							/>
 						</div>
-						<div className="col"></div>
+						<div className="col">
+							<Discard 
+								discardPile={discardPile}
+							/>
+						</div>
 						<div className="col"></div>
 						<div className="col"></div>
 					</div>
@@ -73,7 +78,7 @@ export default function Arrangement ( props ) {
 
 		case 3: 
 			arrangement.push(
-				<div className="container mw-100 h-100" key="pc3">
+				<div className="container mw-100 h-100" id="game-board" key="pc3">
 					<div className="row h-33 align-items-start">
 						<div className="col"></div>
 						<div className="col">
@@ -102,7 +107,11 @@ export default function Arrangement ( props ) {
 								numOfCardsLeft={numOfCardsLeft} 
 							/>
 						</div>
-						<div className="col"></div>
+						<div className="col">
+							<Discard 
+								discardPile={discardPile}
+							/>
+						</div>
 						<div className="col"></div>
 						<div className="col"></div>
 					</div>
@@ -137,7 +146,7 @@ export default function Arrangement ( props ) {
 
 		case 4: 
 			arrangement.push( 
-				<div className="container mw-100 h-100" key="pc4">
+				<div className="container mw-100 h-100" id="game-board" key="pc4">
 					<div className="row h-33 align-items-start">
 						<div className="col"></div>
 						<div className="col"></div>
@@ -166,7 +175,11 @@ export default function Arrangement ( props ) {
 								numOfCardsLeft={numOfCardsLeft} 
 							/>
 						</div>
-						<div className="col"></div>
+						<div className="col">
+							<Discard 
+								discardPile={discardPile}
+							/>
+						</div>
 						<div className="col"></div>
 						<div className="col right-side">
 							<OpponentHand 
@@ -207,7 +220,7 @@ export default function Arrangement ( props ) {
 
 		case 5: 
 			arrangement.push( 
-				<div className="container mw-100 h-100" key="pc5">
+				<div className="container mw-100 h-100" id="game-board" key="pc5">
 					<div className="row h-33 align-items-start">
 						<div className="col"></div>
 						<div className="col">
@@ -242,7 +255,11 @@ export default function Arrangement ( props ) {
 								numOfCardsLeft={numOfCardsLeft} 
 							/>
 						</div>
-						<div className="col"></div>
+						<div className="col">
+							<Discard 
+								discardPile={discardPile}
+							/>
+						</div>
 						<div className="col"></div>
 						<div className="col right-side">
 							<OpponentHand 
@@ -263,13 +280,13 @@ export default function Arrangement ( props ) {
 							<div className="player-buttons">
 								<ul>
 									<li>
-										<button type="button" onClick={playCards} className="btn btn-primary">Play Card(s)</button>
+										<button type="button" id="play-cards" className="btn btn-primary">Play Card(s)</button>
 									</li>
 									<li>
-										<button type="button" className="btn btn-secondary">Yaniv!</button>
+										<button type="button" id="call-yaniv" className="btn btn-secondary">Yaniv!</button>
 									</li>
 									<li>
-										<button type="button" className="btn btn-success">Menu</button>
+										<button type="button" id="menu" className="btn btn-success">Menu</button>
 									</li>
 								</ul>
 							</div>
